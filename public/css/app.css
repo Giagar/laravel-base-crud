@@ -10002,3 +10002,19 @@ h3 {
     border-color: #dee2e6;
   }
 }
+.uppercase {
+  text-transform: uppercase;
+}
+
+header .header-title {
+  line-height: 100px;
+  height: 100px;
+  text-align: center;
+}
+
+main table tbody tr img {
+  max-width: 150px;
+}
+main table tbody tr:hover {
+  background-color: rgba(185, 233, 12, 0.747);
+}

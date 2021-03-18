@@ -8,11 +8,14 @@
     <link rel="stylesheet" href="{{asset('css/app.css')}}">
 </head>
 <body>
+    <header>
+        <h1 class="header-title uppercase">My favourite beers</h1>
+    </header>
 
-    <div class="wrapper">
+    <main >
         <table class="table">
             <thead class="thead-dark">
-                <tr>
+                <tr class="uppercase">
                     <th scope="col">Name</th>
                     <th scope="col">Color</th>
                     <th scope="col">Alcohol</th>
@@ -21,22 +24,26 @@
                 </tr>
             </thead>
             <tbody>
-
-            @foreach ($beers as $beer)
+                @foreach ($beers as $beer)
                 <tr>
                     <td>{{$beer->name}}</td>
                     <td>{{$beer->color}}</td>
                     <td>{{$beer->alcohol}}</td>
                     <td>{{$beer->price}}</td>
                     <td>
-                        <img src="{{$beer->cover}}" alt="birra">
+                        <a href="/beers/{{$beer->id}}">
+                            <img src="{{$beer->cover}}" alt="birra">
+                        </a>
                     </td>
                 </tr>
-            @endforeach
+
+
+                @endforeach
 
             </tbody>
-          </table>
-    </div>
+        </table>
+    </main>
+
 
 </body>
 </html>

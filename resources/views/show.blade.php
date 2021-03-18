@@ -10,6 +10,7 @@
 <body>
 
     {{$beer->name}}
+    <a href="/beers">Back to home</a>
 
 </body>
 </html>
