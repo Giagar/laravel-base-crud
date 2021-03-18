@@ -13,4 +13,6 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', "BeerController@index");
+Route::get('/beers', "BeerController@index");
+
+Route::get("beers/{id}", "BeerController@show");
