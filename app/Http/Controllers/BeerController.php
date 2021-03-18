@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Beer;
 use Illuminate\Http\Request;
 
 class BeerController extends Controller
@@ -13,7 +14,8 @@ class BeerController extends Controller
      */
     public function index()
     {
-        return view("index");
+        $beers = Beer::all();
+        return view("index", ["beers" => $beers]);
     }
 
     /**
