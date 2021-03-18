@@ -9,41 +9,34 @@
 </head>
 <body>
 
-    <table class="table">
-        <thead class="thead-dark">
+    <div class="wrapper">
+        <table class="table">
+            <thead class="thead-dark">
+                <tr>
+                    <th scope="col">Name</th>
+                    <th scope="col">Color</th>
+                    <th scope="col">Alcohol</th>
+                    <th scope="col">Price</th>
+                    <th scope="col">Image</th>
+                </tr>
+            </thead>
+            <tbody>
 
-          <tr>
-            <th scope="col">#</th>
-            <th scope="col">First</th>
-            <th scope="col">Last</th>
-            <th scope="col">Handle</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <th scope="row">1</th>
-            <td>Mark</td>
-            <td>Otto</td>
-            <td>@mdo</td>
-          </tr>
-          <tr>
-            <th scope="row">2</th>
-            <td>Jacob</td>
-            <td>Thornton</td>
-            <td>@fat</td>
-          </tr>
-          <tr>
-            <th scope="row">3</th>
-            <td>Larry</td>
-            <td>the Bird</td>
-            <td>@twitter</td>
-          </tr>
-        </tbody>
-      </table>
+            @foreach ($beers as $beer)
+                <tr>
+                    <td>{{$beer->name}}</td>
+                    <td>{{$beer->color}}</td>
+                    <td>{{$beer->alcohol}}</td>
+                    <td>{{$beer->price}}</td>
+                    <td>
+                        <img src="{{$beer->cover}}" alt="birra">
+                    </td>
+                </tr>
+            @endforeach
 
-    @foreach ($beers as $beer)
+            </tbody>
+          </table>
+    </div>
 
-        {{$beer->name}}
-    @endforeach
 </body>
 </html>
