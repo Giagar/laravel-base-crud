@@ -14,6 +14,7 @@
                 </tr>
             </thead>
             <tbody>
+
                 @foreach ($beers as $beer)
                 <tr>
                     <td>{{$beer->name}}</td>
@@ -26,8 +27,6 @@
                         </a>
                     </td>
                 </tr>
-
-
                 @endforeach
 
             </tbody>

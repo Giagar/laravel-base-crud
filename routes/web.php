@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\BeerController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -13,6 +14,10 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/beers', "BeerController@index");
+/*
+Equivalente di Route::resource per index e show
+// Route::get("/beers", "BeerController@index");
+// Route::get("beers/{id}", "BeerController@show");
+ */
 
-Route::get("beers/{id}", "BeerController@show");
+Route::resource("beers", "BeerController");
