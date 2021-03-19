@@ -45,12 +45,13 @@ class BeerController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show(Beer $id)
+    // Ottavio dice di mettere (Beer $id), ma nn funziona lo stesso
+    public function show($id)
     {
 
         $beer = Beer::find($id);
 
-        return view("show", ["beer" => $beer]);
+        return view("show_product", ["beer" => $beer]);
     }
 
     /**

@@ -22,7 +22,8 @@
                     <td>{{$beer->alcohol}}</td>
                     <td>{{$beer->price}}</td>
                     <td>
-                        <a href="/beers/{{$beer->id}}">
+                        {{-- <a href="/beers/{{$beer->id}}"> --}}
+                        <a href="{{route("beers.show", ["beer"=>$beer->id]) }}">
                             <img src="{{$beer->cover}}" alt="birra">
                         </a>
                     </td>
