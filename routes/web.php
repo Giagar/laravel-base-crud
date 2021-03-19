@@ -21,3 +21,4 @@ Equivalente di Route::resource per index e show
  */
 
 Route::resource("beers", "BeerController");
+

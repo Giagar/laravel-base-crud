@@ -32,6 +32,8 @@
 
             </tbody>
         </table>
+
+        <a href="{{route("beers.create")}}" class="btn btn-primary">Add new beer</a>
     </main>
 
 @endsection
