@@ -36,15 +36,17 @@ class BeerController extends Controller
      */
     public function store(Request $request)
     {
-        $request->validate([
-            "name" => "required|max:255",
-            "color" => "required",
-            "alcohol" => "required",
-            "price" => "required|numeric|between:0,9999.99",
-            "cover" => "required",
-            "description" => "required",
-            "content" => "required",
-        ]);
+        // $request->validate([
+        //     "name" => "required|max:255",
+        //     "color" => "required",
+        //     "alcohol" => "required",
+        //     "price" => "required|numeric|between:0,9999.99",
+        //     "cover" => "required",
+        //     "description" => "required",
+        //     "content" => "required",
+        // ]);
+
+        $this->validateForm($request);
 
         $data = $request->all();
         $beer = new Beer();
@@ -97,6 +99,9 @@ class BeerController extends Controller
      */
     public function update(Request $request, Beer $beer)
     {
+
+        $this->validateForm($request);
+
         // dd($beer);
         $data = $request->all();
         $beer->update($data);
@@ -107,12 +112,25 @@ class BeerController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  int  $id
+     * @param  Book  $book
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Beer $beer)
     {
-        //
+        $beer->delete();
+        return redirect()->route('beers.index');
+    }
+
+    protected function validateForm(Request $request) {
+        $request->validate([
+            "name" => "required|max:255",
+            "color" => "required",
+            "alcohol" => "required",
+            "price" => "required|numeric|between:0,9999.99",
+            "cover" => "required",
+            "description" => "required",
+            "content" => "required",
+        ]);
     }
 
 }

@@ -33,11 +33,22 @@
                     </td>
                     <td>
                         <a href="{{route('beers.show', ['beer'=>$beer->id])}}">
-                            <i class="fas fa-eye"></i>
+                            <button class="btn btn-primary">
+                                <i class="fas fa-eye"></i>
+                            </button>
                         </a>
                         <a href="{{route('beers.edit', compact('beer')) }}">
-                            <i class="fas fa-edit"></i>
+                            <button class="btn btn-primary">
+                                <i class="fas fa-edit"></i>
+                            </button>
                         </a>
+                        <form action="{{ route('beers.destroy', compact('beer')) }}" method="POST">
+                        @csrf
+                        @method('DELETE')
+                            <button type="submit" class="btn btn-danger">
+                                <i class="fas fa-meteor"></i>
+                            </button>
+                        </form>
                     </td>
                 </tr>
                 @endforeach
