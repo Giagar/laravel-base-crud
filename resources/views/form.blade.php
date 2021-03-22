@@ -2,12 +2,9 @@
 
 @section("main")
 
-<div class="container">
+{{-- <div class="container">
     <form action="{{route('beers.store')}}" method="post">
         @csrf
-        {{-- scriviamo a mano l'input --}}
-        {{-- <input name="_method" type="hidden" value="POST"> --}}
-        {{-- oppure usiamo blade --}}
         @method('POST')
         <div class="form-group">
             <label for="name">Name</label>
@@ -47,5 +44,7 @@
         <input type="submit" value="Add" class="btn btn-primary">
         </form>
 
-    @endsection
-</div>
+    </div> --}}
+
+    @include('form_template', ['edit' => false])
+@endsection

@@ -11,6 +11,7 @@
                     <th scope="col">Alcohol</th>
                     <th scope="col">Price</th>
                     <th scope="col">Image</th>
+                    <th scope="col">Actions</th>
                 </tr>
             </thead>
             <tbody>
@@ -21,10 +22,21 @@
                     <td>{{$beer->color}}</td>
                     <td>{{$beer->alcohol}}</td>
                     <td>{{$beer->price}}</td>
-                    <td>
+                    {{-- <td> --}}
                         {{-- <a href="/beers/{{$beer->id}}"> --}}
-                        <a href="{{route("beers.show", ["beer"=>$beer->id]) }}">
+                        {{-- <a href="{{route("beers.show", ["beer"=>$beer->id]) }}">
                             <img src="{{$beer->cover}}" alt="birra">
+                        </a>
+                    </td> --}}
+                    <td>
+                        <img src="{{$beer->cover}}" alt="birra">
+                    </td>
+                    <td>
+                        <a href="{{route('beers.show', ['beer'=>$beer->id])}}">
+                            <i class="fas fa-eye"></i>
+                        </a>
+                        <a href="{{route('beers.edit', compact('beer')) }}">
+                            <i class="fas fa-edit"></i>
                         </a>
                     </td>
                 </tr>

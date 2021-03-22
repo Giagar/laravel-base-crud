@@ -80,24 +80,28 @@ class BeerController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  int  $id
+     * @param  Beer  $beer
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Beer $beer)
     {
-        //
+        return view('form_edit', compact('beer'));
     }
 
     /**
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
+     * @param  Beer  $beer
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, Beer $beer)
     {
-        //
+        // dd($beer);
+        $data = $request->all();
+        $beer->update($data);
+
+        return redirect()->route('beers.index');
     }
 
     /**
