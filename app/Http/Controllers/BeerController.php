@@ -37,10 +37,10 @@ class BeerController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            "name" => "required",
+            "name" => "required|max:255",
             "color" => "required",
             "alcohol" => "required",
-            "price" => "required",
+            "price" => "required|numeric|between:0,9999.99",
             "cover" => "required",
             "description" => "required",
             "content" => "required",
@@ -110,4 +110,5 @@ class BeerController extends Controller
     {
         //
     }
+
 }
